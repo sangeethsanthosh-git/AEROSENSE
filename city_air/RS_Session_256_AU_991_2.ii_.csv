@@ -1,0 +1,10 @@
+Category,Days Range,2019,2020,2021
+Good,(0–50),76,144,89
+Satisfactory,(51–100),114,72,103
+Moderate,(101–200),74,76,90
+Total,Total,264,292,282
+Poor,(201–300),64,60,75
+Very Poor,(301–400),30,14,8
+Severe,(>401),5,0,0
+Total,Total,99,74,83
+Total Number of Days,Total Number of Days,363,366,365

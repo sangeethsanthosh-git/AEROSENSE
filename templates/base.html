@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Home{% endblock %} - AREOSENSE</title>
+    <!-- Import Montserrat from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            transition: background-image 0.5s ease-in-out;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 10px;
+            background: rgba(42, 42, 42, 0.8);
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            transition: width 0.3s ease, padding 0.3s ease;
+            overflow: hidden;
+        }
+        .sidebar:hover {
+            width: 60px;
+            padding: 20px 10px;
+        }
+        .sidebar .logo {
+            width: 90px;
+            height: auto;
+            margin-bottom: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .sidebar:hover .logo {
+            opacity: 1;
+        }
+        .sidebar .app-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+        .sidebar:hover .app-name {
+            opacity: 1;
+        }
+        .sidebar a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .sidebar:hover a {
+            opacity: 1;
+        }
+        .sidebar a img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s ease;
+        }
+        .sidebar a:hover img {
+            transform: scale(1.2);
+            background: rgba(68, 68, 68, 0.8);
+            border-radius: 5px;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(3px);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 20px;
+            font-weight: normal;
+        }
+        .header form {
+            display: flex;
+            align-items: center;
+        }
+        .header input[type="text"] {
+            padding: 5px;
+            font-size: 14px;
+            border: none;
+            border-radius: 3px 0 0 3px;
+            background: #333;
+            color: white;
+        }
+        .header button {
+            padding: 5px 10px;
+            font-size: 14px;
+            border: none;
+            background: #555;
+            color: white;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+        }
+        .flash-messages {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 80%;
+            max-width: 600px;
+        }
+        .flash-message {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        .flash-message.error {
+            background: rgba(255, 99, 71, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="/static/images/logo.png" alt="AREOSENSE Logo" class="logo">
+            <a href="/"><img src="/static/images/home.png" alt="Home"></a>
+            <a href="/pollution"><img src="/static/images/pollution.png" alt="Pollution"></a>
+            <a href="/air"><img src="/static/images/air.png" alt="Air"></a>
+            <a href="/about"><img src="/static/images/about.png" alt="About"></a>
+        </div>
+        <div class="main-content">
+            <!-- Flash messages -->
+            <div class="flash-messages">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="flash-message {{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="header">
+                <h1 id="location-header">
+                    {% if weather %}
+                        {{ weather.city }}
+                    {% else %}
+                        Location Unavailable
+                    {% endif %}
+                </h1>
+                <form method="POST" action="{{ request.path }}">
+                    <input type="text" name="city" id="city-input" placeholder="Search your city..." 
+                           value="{% if weather %}{{ weather.city }}{% else %}{% endif %}" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateBackground(weather) {
+            const now = new Date();
+            const currentHour = now.getHours();
+            const isDay = currentHour >= 6 && currentHour < 18; // Day from 6 AM to 6 PM local time
+            const desc = weather ? weather.description.toLowerCase() : 'default';
+            let bgImage;
+
+            console.log(`Current hour: ${currentHour}, Is Day: ${isDay}, Weather Description: ${desc}`);
+
+            if (desc.includes('clear') || desc.includes('clear sky')) {
+                bgImage = `/static/images/sunny_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('cloud') || desc.includes('overcast')) {
+                bgImage = `/static/images/cloudy_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('rain') || desc.includes('light rain') || desc.includes('shower')) {
+                bgImage = `/static/images/rainy_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('snow')) {
+                bgImage = `/static/images/snowy_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('thunderstorm')) {
+                bgImage = `/static/images/thunderstorm_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('mist') || desc.includes('haze') || desc.includes('fog')) {
+                bgImage = `/static/images/mist_${isDay ? 'day' : 'night'}.gif`;
+            } else {
+                bgImage = `/static/images/default_${isDay ? 'day' : 'night'}.gif`;
+                console.log(`Unmatched weather description: ${desc}`);
+            }
+
+            // Check if image exists, fall back if not
+            fetch(bgImage, { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        console.error(`Image not found: ${bgImage}, falling back to default`);
+                        bgImage = `/static/images/default_${isDay ? 'day' : 'night'}.gif`;
+                    }
+                    document.body.style.backgroundImage = `url('${bgImage}')`;
+                    console.log(`Updated background: ${bgImage}`);
+                })
+                .catch(error => {
+                    console.error(`Error checking image ${bgImage}: ${error}`);
+                    document.body.style.backgroundImage = `url('/static/images/default_${isDay ? 'day' : 'night'}.gif')`;
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            {% if weather %}
+                const weatherData = {
+                    description: "{{ weather.description }}",
+                    sunrise: {{ weather.sunrise if weather.sunrise is defined else 0 }},
+                    sunset: {{ weather.sunset if weather.sunset is defined else 0 }}
+                };
+                updateBackground(weatherData);
+            {% else %}
+                updateBackground(null); // Default background
+            {% endif %}
+
+            {% if not geolocation_attempted and request.path == '/' %}
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        function(position) {
+                            const lat = position.coords.latitude;
+                            const lon = position.coords.longitude;
+                            console.log(`Geolocation fetched: Latitude=${lat}, Longitude=${lon}`);
+
+                            fetch('/', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                body: `lat=${lat}&lon=${lon}`
+                            })
+                            .then(response => response.text())
+                            .then(html => {
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(html, 'text/html');
+                                document.querySelector('#location-header').innerHTML = doc.querySelector('#location-header').innerHTML;
+                                document.querySelector('#content').innerHTML = doc.querySelector('#content').innerHTML;
+                                document.querySelector('#city-input').value = doc.querySelector('#city-input').value;
+                                const newWeatherDesc = doc.querySelector('#weather-desc')?.textContent || "{{ weather.description if weather else 'default' }}";
+                                updateBackground({ description: newWeatherDesc });
+                            })
+                            .catch(error => console.error('Error sending geolocation:', error));
+                        },
+                        function(error) {
+                            console.error('Geolocation error:', error.message);
+                            fetch('/', { method: 'POST', body: 'geolocation_failed=true' })
+                            .then(response => response.text())
+                            .then(html => {
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(html, 'text/html');
+                                document.querySelector('#location-header').innerHTML = doc.querySelector('#location-header').innerHTML;
+                                document.querySelector('#content').innerHTML = doc.querySelector('#content').innerHTML;
+                                document.querySelector('#city-input').value = doc.querySelector('#city-input').value;
+                                const newWeatherDesc = doc.querySelector('#weather-desc')?.textContent || "{{ weather.description if weather else 'default' }}";
+                                updateBackground({ description: newWeatherDesc });
+                            })
+                            .catch(error => console.error('Error marking geolocation failure:', error));
+                        }
+                    );
+                } else {
+                    console.log("Geolocation not supported by this browser.");
+                    fetch('/', { method: 'POST', body: 'geolocation_failed=true' })
+                    .then(response => response.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        document.querySelector('#location-header').innerHTML = doc.querySelector('#location-header').innerHTML;
+                        document.querySelector('#content').innerHTML = doc.querySelector('#content').innerHTML;
+                        document.querySelector('#city-input').value = doc.querySelector('#city-input').value;
+                        const newWeatherDesc = doc.querySelector('#weather-desc')?.textContent || "{{ weather.description if weather else 'default' }}";
+                        updateBackground({ description: newWeatherDesc });
+                    })
+                    .catch(error => console.error('Error marking geolocation failure:', error));
+                }
+            {% endif %}
+        });
+    </script>
+    <!-- Hidden elements for weather data -->
+    {% if weather %}
+        <span id="weather-desc" style="display:none">{{ weather.description }}</span>
+        <span id="weather-sunrise" style="display:none">{{ weather.sunrise }}</span>
+        <span id="weather-sunset" style="display:none">{{ weather.sunset }}</span>
+    {% endif %}
+</body>
+</html>

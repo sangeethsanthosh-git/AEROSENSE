@@ -1,0 +1,21 @@
+Crop,Min temperature(c),Max temperature(c),Min humidity(%),Max humidity(%)
+Tomato,21,30,55,80
+Chilli,20,25,50,70
+Spinach,10,15,40,60
+Okra,24,36,65,75
+Brinjal,13,21,50,65
+Rambutan,22,30,80,90
+Cucumber,18,24,85,95
+Cabbage,15,21,90,98
+Capsicum,25,30,50,60
+Papaya,21,32,90,95
+Broccoli,18,21,95,99
+Lettuce,15,20,50,70
+Cherry Tomato,21,30,55,80
+Strawberry,20,24,60,75
+Snake Gourd,30,35,85,90
+Beans,18,29,65,75
+Mushroom,22,28,70,90
+Pumpkin,10,12,50,75
+Watermelon,21,29,60,80
+Carrot,15,21,90,95

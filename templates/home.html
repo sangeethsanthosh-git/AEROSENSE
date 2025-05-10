@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <style>
+        .weather-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .weather-summary {
+            margin-bottom: 20px;
+        }
+
+        .forecast-container {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .forecast-header {
+            margin-bottom: 10px;
+        }
+
+        .forecast-items {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 15px;
+            overflow-x: auto;
+        }
+
+        .forecast-day {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .toggle-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .toggle-button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <div class="weather-container">
+        {% if weather %}
+            <div class="weather-summary">
+                <h1>{{ weather.city }}</h1>
+                <h2>{{ weather.temp }}°C</h2>
+                <div>
+                    <p>{{ weather.description | capitalize }}</p>
+                    <div class="weather-details">
+                        <p>Humidity: {{ weather.humidity }}%</p>
+                        <p>Wind: {{ weather.wind_speed }} m/s</p>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p>Unable to determine your location. Please search for a city above.</p>
+        {% endif %}
+
+        <!-- Upcoming Weather Section -->
+        {% if short_term_forecast or daily_forecast %}
+            <div class="forecast-container" id="short-term-forecast">
+                <div class="forecast-header">
+                    <h3>Upcoming Weather (Next 15 Hours)</h3>
+                </div>
+                <div class="forecast-items">
+                    {% for day in short_term_forecast %}
+                        <div class="forecast-day">
+                            <p>{{ day.date }}</p>
+                            <p>{{ day.temp }}°C - {{ day.description | capitalize }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="forecast-container hidden" id="daily-forecast">
+                <div class="forecast-header">
+                    <h3>Next 5 Days Weather</h3>
+                </div>
+                <div class="forecast-items">
+                    {% for day in daily_forecast %}
+                        <div class="forecast-day">
+                            <p>{{ day.date }}</p>
+                            <p>{{ day.temp }}°C - {{ day.description | capitalize }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <button class="toggle-button" onclick="toggleForecast()">Show Next 5 Days</button>
+        {% endif %}
+    </div>
+
+    <script>
+        function toggleForecast() {
+            const shortTerm = document.getElementById('short-term-forecast');
+            const daily = document.getElementById('daily-forecast');
+            const button = document.querySelector('.toggle-button');
+
+            if (shortTerm.classList.contains('hidden')) {
+                shortTerm.classList.remove('hidden');
+                daily.classList.add('hidden');
+                button.textContent = 'Show Next 5 Days';
+            } else {
+                shortTerm.classList.add('hidden');
+                daily.classList.remove('hidden');
+                button.textContent = 'Show Next 15 Hours';
+            }
+        }
+    </script>
+{% endblock %}

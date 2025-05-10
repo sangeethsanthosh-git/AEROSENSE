@@ -1,0 +1,189 @@
+country,state,city,station,last_update,latitude,longitude,pollutant_id,pollutant_min,pollutant_max,pollutant_avg
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB","04-05-2025 21:00:00",16.5150833,80.5181667,NO2,30,46,34
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB","04-05-2025 21:00:00",16.5150833,80.5181667,NH3,2,3,2
+India,Andhra_Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB","04-05-2025 21:00:00",14.675886,77.593027,OZONE,9,41,40
+India,Andhra_Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB","04-05-2025 21:00:00",13.204880,79.097889,PM2.5,46,205,108
+India,Andhra_Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB","04-05-2025 21:00:00",13.204880,79.097889,NO2,17,27,24
+India,Andhra_Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB","04-05-2025 21:00:00",14.465052,78.824187,NH3,5,6,6
+India,Andhra_Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB","04-05-2025 21:00:00",14.465052,78.824187,CO,32,34,32
+India,Andhra_Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB","04-05-2025 21:00:00",16.9872867,81.7363176,NO2,13,53,27
+India,Andhra_Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB","04-05-2025 21:00:00",13.615387,79.409230,PM2.5,44,143,81
+India,Andhra_Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB","04-05-2025 21:00:00",16.509717,80.612222,PM2.5,60,73,67
+India,Andhra_Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB","04-05-2025 21:00:00",16.509717,80.612222,CO,32,34,32
+India,Andhra_Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB","04-05-2025 21:00:00",16.554731,80.649110,NO2,15,30,21
+India,Andhra_Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB","04-05-2025 21:00:00",17.72,83.3,PM2.5,37,81,56
+India,Andhra_Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB","04-05-2025 21:00:00",17.72,83.3,NO2,13,141,66
+India,Andhra_Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB","04-05-2025 21:00:00",17.72,83.3,OZONE,14,68,44
+India,Assam,Byrnihat,"Central Academy for SFS, Byrnihat - PCBA","04-05-2025 21:00:00",26.071318,91.87488,NO2,3,31,15
+India,Assam,Guwahati,"IITG, Guwahati - PCBA","04-05-2025 21:00:00",26.2028636,91.70046436,CO,8,22,12
+India,Assam,Guwahati,"LGBI Airport, Guwahati - PCBA","04-05-2025 21:00:00",26.10887,91.589544,NH3,16,19,16
+India,Assam,Guwahati,"LGBI Airport, Guwahati - PCBA","04-05-2025 21:00:00",26.10887,91.589544,CO,15,117,95
+India,Assam,Guwahati,"Pan Bazaar, Guwahati - PCBA","04-05-2025 21:00:00",26.187500,91.744194,PM2.5,1,98,62
+India,Assam,Guwahati,"Pan Bazaar, Guwahati - PCBA","04-05-2025 21:00:00",26.187500,91.744194,OZONE,17,18,17
+India,Assam,Nagaon,"Christianpatty, Nagaon - PCBA","04-05-2025 21:00:00",26.349082,92.68449,NO2,1,4,2
+India,Assam,Nagaon,"Christianpatty, Nagaon - PCBA","04-05-2025 21:00:00",26.349082,92.68449,OZONE,19,24,22
+India,Assam,Nalbari,"Bata Chowk, Nalbari - PCBA","04-05-2025 21:00:00",26.446912,91.439057,OZONE,9,16,15
+India,Assam,Silchar,"Tarapur, Silchar - PCBA","04-05-2025 21:00:00",24.82827,92.79525,SO2,2,4,4
+India,Assam,Silchar,"Tarapur, Silchar - PCBA","04-05-2025 21:00:00",24.82827,92.79525,OZONE,1,16,8
+India,Assam,Sivasagar,"Girls College, Sivasagar - PCBA","04-05-2025 21:00:00",26.987634,94.636574,PM10,16,50,27
+India,Assam,Sivasagar,"Girls College, Sivasagar - PCBA","04-05-2025 21:00:00",26.987634,94.636574,NH3,1,2,1
+India,Bihar,Arrah,"New DM Office, Arrah - BSPCB","04-05-2025 21:00:00",25.5626095,84.663264,SO2,8,10,9
+India,Bihar,Arrah,"New DM Office, Arrah - BSPCB","04-05-2025 21:00:00",25.5626095,84.663264,OZONE,5,22,12
+India,Bihar,Aurangabad,"Gurdeo Nagar, Aurangabad - BSPCB","04-05-2025 21:00:00",24.75746,84.366208,OZONE,20,85,53
+India,Bihar,Begusarai,"Lohiyanagar, Begusarai - BSPCB","04-05-2025 21:00:00",25.42742023,86.13886079,NH3,11,12,11
+India,Bihar,Bettiah,"Kamalnath Nagar, Bettiah - BSPCB","04-05-2025 21:00:00",26.80365,84.51954,SO2,9,19,13
+India,Bihar,Bettiah,"Kamalnath Nagar, Bettiah - BSPCB","04-05-2025 21:00:00",26.80365,84.51954,CO,30,96,72
+India,Bihar,Bhagalpur,"DM Office_Kachari Chowk, Bhagalpur - BSPCB","04-05-2025 21:00:00",25.251013,86.989001,NH3,1,2,1
+India,Bihar,Bhagalpur,"Mayaganj, Bhagalpur - BSPCB","04-05-2025 21:00:00",25.265194,87.012947,PM2.5,NA,NA,NA
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB","04-05-2025 21:00:00",16.5150833,80.5181667,OZONE,13,61,44
+India,Andhra_Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB","04-05-2025 21:00:00",14.675886,77.593027,SO2,13,16,14
+India,Andhra_Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB","04-05-2025 21:00:00",14.675886,77.593027,CO,25,34,32
+India,Andhra_Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB","04-05-2025 21:00:00",14.465052,78.824187,PM10,20,20,20
+India,Andhra_Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB","04-05-2025 21:00:00",14.465052,78.824187,NO2,10,16,13
+India,Andhra_Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB","04-05-2025 21:00:00",16.9872867,81.7363176,SO2,10,11,11
+India,Andhra_Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB (Formerly known as Tirumala, Tirupati - APPCB)","04-05-2025 21:00:00",13.67,79.35,SO2,4,11,7
+India,Andhra_Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB","04-05-2025 21:00:00",13.615387,79.409230,NH3,3,5,4
+India,Andhra_Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB","04-05-2025 21:00:00",16.536107,80.594233,NO2,15,17,15
+India,Andhra_Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB","04-05-2025 21:00:00",16.486692,80.699436,PM2.5,NA,NA,NA
+India,Andhra_Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB","04-05-2025 21:00:00",16.486692,80.699436,NH3,NA,NA,NA
+India,Andhra_Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB","04-05-2025 21:00:00",16.509717,80.612222,PM10,58,71,65
+India,Andhra_Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB","04-05-2025 21:00:00",16.509717,80.612222,SO2,11,16,12
+India,Andhra_Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB","04-05-2025 21:00:00",16.554731,80.649110,PM2.5,54,77,62
+India,Andhra_Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB","04-05-2025 21:00:00",16.554731,80.649110,OZONE,18,45,34
+India,Andhra_Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB","04-05-2025 21:00:00",17.72,83.3,PM10,48,130,90
+India,Andhra_Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB","04-05-2025 21:00:00",17.72,83.3,SO2,9,45,18
+India,Arunachal_Pradesh,Naharlagun,"Naharlagun, Naharlagun - APSPCB","04-05-2025 21:00:00",27.103358,93.679645,PM2.5,NA,NA,NA
+India,Arunachal_Pradesh,Naharlagun,"Naharlagun, Naharlagun - APSPCB","04-05-2025 21:00:00",27.103358,93.679645,SO2,NA,NA,NA
+India,Arunachal_Pradesh,Naharlagun,"Naharlagun, Naharlagun - APSPCB","04-05-2025 21:00:00",27.103358,93.679645,CO,NA,NA,NA
+India,Assam,Byrnihat,"Central Academy for SFS, Byrnihat - PCBA","04-05-2025 21:00:00",26.071318,91.87488,PM2.5,27,416,164
+India,Assam,Byrnihat,"Central Academy for SFS, Byrnihat - PCBA","04-05-2025 21:00:00",26.071318,91.87488,PM10,22,356,113
+India,Assam,Byrnihat,"Central Academy for SFS, Byrnihat - PCBA","04-05-2025 21:00:00",26.071318,91.87488,NH3,4,4,4
+India,Assam,Guwahati,"IITG, Guwahati - PCBA","04-05-2025 21:00:00",26.2028636,91.70046436,PM10,56,198,123
+India,Assam,Guwahati,"LGBI Airport, Guwahati - PCBA","04-05-2025 21:00:00",26.10887,91.589544,PM2.5,80,277,151
+India,Assam,Guwahati,"LGBI Airport, Guwahati - PCBA","04-05-2025 21:00:00",26.10887,91.589544,PM10,52,131,100
+India,Assam,Guwahati,"LGBI Airport, Guwahati - PCBA","04-05-2025 21:00:00",26.10887,91.589544,NO2,16,19,17
+India,Assam,Guwahati,"Pan Bazaar, Guwahati - PCBA","04-05-2025 21:00:00",26.187500,91.744194,CO,15,93,25
+India,Assam,Guwahati,"Railway Colony, Guwahati - PCBA","04-05-2025 21:00:00",26.181742,91.78063,PM2.5,37,176,86
+India,Assam,Silchar,"Tarapur, Silchar - PCBA","04-05-2025 21:00:00",24.82827,92.79525,PM2.5,31,64,42
+India,Assam,Silchar,"Tarapur, Silchar - PCBA","04-05-2025 21:00:00",24.82827,92.79525,PM10,40,52,45
+India,Assam,Silchar,"Tarapur, Silchar - PCBA","04-05-2025 21:00:00",24.82827,92.79525,NH3,1,1,1
+India,Assam,Silchar,"Tarapur, Silchar - PCBA","04-05-2025 21:00:00",24.82827,92.79525,CO,17,27,26
+India,Assam,Sivasagar,"Girls College, Sivasagar - PCBA","04-05-2025 21:00:00",26.987634,94.636574,NO2,10,24,16
+India,Bihar,Araria,"Kharahiya Basti, Araria - BSPCB","04-05-2025 21:00:00",26.146529,87.454184,PM10,20,177,68
+India,Bihar,Araria,"Kharahiya Basti, Araria - BSPCB","04-05-2025 21:00:00",26.146529,87.454184,CO,45,68,54
+India,Bihar,Arrah,"New DM Office, Arrah - BSPCB","04-05-2025 21:00:00",25.5626095,84.663264,PM2.5,18,55,33
+India,Bihar,Arrah,"New DM Office, Arrah - BSPCB","04-05-2025 21:00:00",25.5626095,84.663264,PM10,30,107,59
+India,Bihar,Aurangabad,"Gurdeo Nagar, Aurangabad - BSPCB","04-05-2025 21:00:00",24.75746,84.366208,SO2,NA,NA,NA
+India,Bihar,Bettiah,"Kamalnath Nagar, Bettiah - BSPCB","04-05-2025 21:00:00",26.80365,84.51954,PM2.5,NA,NA,NA
+India,Bihar,Bettiah,"Kamalnath Nagar, Bettiah - BSPCB","04-05-2025 21:00:00",26.80365,84.51954,NO2,26,29,28
+India,Bihar,Bettiah,"Kamalnath Nagar, Bettiah - BSPCB","04-05-2025 21:00:00",26.80365,84.51954,NH3,3,4,4
+India,Bihar,Bettiah,"Kamalnath Nagar, Bettiah - BSPCB","04-05-2025 21:00:00",26.80365,84.51954,OZONE,17,26,23
+India,Bihar,Bhagalpur,"DM Office_Kachari Chowk, Bhagalpur - BSPCB","04-05-2025 21:00:00",25.251013,86.989001,PM2.5,12,52,27
+India,Bihar,Bhagalpur,"DM Office_Kachari Chowk, Bhagalpur - BSPCB","04-05-2025 21:00:00",25.251013,86.989001,OZONE,13,52,15
+India,Bihar,Bhagalpur,"Mayaganj, Bhagalpur - BSPCB","04-05-2025 21:00:00",25.265194,87.012947,NO2,9,10,10
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB","04-05-2025 21:00:00",16.5150833,80.5181667,PM2.5,25,55,37
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB","04-05-2025 21:00:00",16.5150833,80.5181667,CO,2,133,22
+India,Andhra_Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB","04-05-2025 21:00:00",13.204880,79.097889,PM10,39,124,81
+India,Andhra_Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB","04-05-2025 21:00:00",13.204880,79.097889,CO,26,31,28
+India,Andhra_Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB","04-05-2025 21:00:00",14.465052,78.824187,PM2.5,27,27,27
+India,Andhra_Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB","04-05-2025 21:00:00",14.465052,78.824187,OZONE,24,24,24
+India,Andhra_Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB","04-05-2025 21:00:00",16.9872867,81.7363176,PM2.5,21,39,30
+India,Andhra_Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB","04-05-2025 21:00:00",16.9872867,81.7363176,PM10,28,58,40
+India,Andhra_Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB","04-05-2025 21:00:00",16.9872867,81.7363176,OZONE,5,13,5
+India,Andhra_Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB (Formerly known as Tirumala, Tirupati - APPCB)","04-05-2025 21:00:00",13.67,79.35,PM10,48,114,67
+India,Andhra_Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB","04-05-2025 21:00:00",13.615387,79.409230,OZONE,14,22,21
+India,Andhra_Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB","04-05-2025 21:00:00",16.536107,80.594233,PM2.5,72,101,80
+India,Andhra_Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB","04-05-2025 21:00:00",16.536107,80.594233,OZONE,5,27,17
+India,Andhra_Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB","04-05-2025 21:00:00",16.486692,80.699436,PM10,NA,NA,NA
+India,Andhra_Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB","04-05-2025 21:00:00",16.486692,80.699436,NO2,NA,NA,NA
+India,Andhra_Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB","04-05-2025 21:00:00",16.486692,80.699436,SO2,NA,NA,NA
+India,Andhra_Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB","04-05-2025 21:00:00",16.486692,80.699436,OZONE,21,46,26
+India,Andhra_Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB","04-05-2025 21:00:00",16.509717,80.612222,NH3,4,6,5
+India,Andhra_Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB","04-05-2025 21:00:00",16.509717,80.612222,OZONE,7,29,23
+India,Andhra_Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB","04-05-2025 21:00:00",16.554731,80.649110,NH3,3,3,3
+India,Arunachal_Pradesh,Naharlagun,"Naharlagun, Naharlagun - APSPCB","04-05-2025 21:00:00",27.103358,93.679645,PM10,NA,NA,NA
+India,Assam,Byrnihat,"Central Academy for SFS, Byrnihat - PCBA","04-05-2025 21:00:00",26.071318,91.87488,SO2,9,36,32
+India,Assam,Byrnihat,"Central Academy for SFS, Byrnihat - PCBA","04-05-2025 21:00:00",26.071318,91.87488,CO,28,64,58
+India,Assam,Byrnihat,"Central Academy for SFS, Byrnihat - PCBA","04-05-2025 21:00:00",26.071318,91.87488,OZONE,13,32,26
+India,Assam,Guwahati,"IITG, Guwahati - PCBA","04-05-2025 21:00:00",26.2028636,91.70046436,NO2,1,12,5
+India,Assam,Guwahati,"IITG, Guwahati - PCBA","04-05-2025 21:00:00",26.2028636,91.70046436,NH3,5,5,5
+India,Assam,Guwahati,"LGBI Airport, Guwahati - PCBA","04-05-2025 21:00:00",26.10887,91.589544,OZONE,17,22,20
+India,Assam,Guwahati,"Pan Bazaar, Guwahati - PCBA","04-05-2025 21:00:00",26.187500,91.744194,SO2,33,84,50
+India,Assam,Guwahati,"Railway Colony, Guwahati - PCBA","04-05-2025 21:00:00",26.181742,91.78063,NO2,3,3,3
+India,Assam,Nalbari,"Bata Chowk, Nalbari - PCBA","04-05-2025 21:00:00",26.446912,91.439057,PM2.5,29,113,45
+India,Assam,Nalbari,"Bata Chowk, Nalbari - PCBA","04-05-2025 21:00:00",26.446912,91.439057,NO2,1,6,3
+India,Assam,Nalbari,"Bata Chowk, Nalbari - PCBA","04-05-2025 21:00:00",26.446912,91.439057,SO2,1,5,3
+India,Assam,Sivasagar,"Girls College, Sivasagar - PCBA","04-05-2025 21:00:00",26.987634,94.636574,PM2.5,14,46,28
+India,Bihar,Araria,"Kharahiya Basti, Araria - BSPCB","04-05-2025 21:00:00",26.146529,87.454184,PM2.5,28,170,51
+India,Bihar,Araria,"Kharahiya Basti, Araria - BSPCB","04-05-2025 21:00:00",26.146529,87.454184,SO2,29,43,34
+India,Bihar,Arrah,"New DM Office, Arrah - BSPCB","04-05-2025 21:00:00",25.5626095,84.663264,NO2,3,9,7
+India,Bihar,Arrah,"New DM Office, Arrah - BSPCB","04-05-2025 21:00:00",25.5626095,84.663264,NH3,1,1,1
+India,Bihar,Aurangabad,"Gurdeo Nagar, Aurangabad - BSPCB","04-05-2025 21:00:00",24.75746,84.366208,PM10,NA,NA,NA
+India,Bihar,Begusarai,"Lohiyanagar, Begusarai - BSPCB","04-05-2025 21:00:00",25.42742023,86.13886079,PM10,21,167,66
+India,Bihar,Begusarai,"Lohiyanagar, Begusarai - BSPCB","04-05-2025 21:00:00",25.42742023,86.13886079,CO,36,59,47
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB","04-05-2025 21:00:00",16.5150833,80.5181667,PM10,1,56,22
+India,Andhra_Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB","04-05-2025 21:00:00",13.204880,79.097889,SO2,13,13,13
+India,Andhra_Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB","04-05-2025 21:00:00",14.465052,78.824187,SO2,16,17,16
+India,Andhra_Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB (Formerly known as Tirumala, Tirupati - APPCB)","04-05-2025 21:00:00",13.67,79.35,OZONE,17,38,32
+India,Andhra_Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB","04-05-2025 21:00:00",13.615387,79.409230,PM10,41,107,71
+India,Andhra_Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB","04-05-2025 21:00:00",16.536107,80.594233,NH3,3,3,3
+India,Andhra_Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB","04-05-2025 21:00:00",16.486692,80.699436,CO,20,35,25
+India,Andhra_Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB","04-05-2025 21:00:00",16.509717,80.612222,NO2,30,52,41
+India,Andhra_Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB","04-05-2025 21:00:00",16.554731,80.649110,SO2,19,28,22
+India,Andhra_Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB","04-05-2025 21:00:00",16.554731,80.649110,CO,34,56,42
+India,Andhra_Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB","04-05-2025 21:00:00",17.72,83.3,NH3,2,4,2
+India,Arunachal_Pradesh,Naharlagun,"Naharlagun, Naharlagun - APSPCB","04-05-2025 21:00:00",27.103358,93.679645,NO2,NA,NA,NA
+India,Assam,Guwahati,"IITG, Guwahati - PCBA","04-05-2025 21:00:00",26.2028636,91.70046436,PM2.5,39,229,110
+India,Assam,Guwahati,"IITG, Guwahati - PCBA","04-05-2025 21:00:00",26.2028636,91.70046436,SO2,21,26,23
+India,Assam,Guwahati,"IITG, Guwahati - PCBA","04-05-2025 21:00:00",26.2028636,91.70046436,OZONE,1,15,11
+India,Assam,Guwahati,"Pan Bazaar, Guwahati - PCBA","04-05-2025 21:00:00",26.187500,91.744194,PM10,32,76,53
+India,Assam,Guwahati,"Railway Colony, Guwahati - PCBA","04-05-2025 21:00:00",26.181742,91.78063,CO,29,102,42
+India,Assam,Guwahati,"Railway Colony, Guwahati - PCBA","04-05-2025 21:00:00",26.181742,91.78063,OZONE,1,33,12
+India,Assam,Nagaon,"Christianpatty, Nagaon - PCBA","04-05-2025 21:00:00",26.349082,92.68449,PM10,19,96,54
+India,Assam,Nagaon,"Christianpatty, Nagaon - PCBA","04-05-2025 21:00:00",26.349082,92.68449,NH3,4,4,4
+India,Assam,Nagaon,"Christianpatty, Nagaon - PCBA","04-05-2025 21:00:00",26.349082,92.68449,SO2,12,15,13
+India,Assam,Nagaon,"Christianpatty, Nagaon - PCBA","04-05-2025 21:00:00",26.349082,92.68449,CO,38,66,41
+India,Assam,Silchar,"Tarapur, Silchar - PCBA","04-05-2025 21:00:00",24.82827,92.79525,NO2,11,13,13
+India,Assam,Sivasagar,"Girls College, Sivasagar - PCBA","04-05-2025 21:00:00",26.987634,94.636574,OZONE,1,9,5
+India,Bihar,Araria,"Kharahiya Basti, Araria - BSPCB","04-05-2025 21:00:00",26.146529,87.454184,NH3,8,9,8
+India,Bihar,Araria,"Kharahiya Basti, Araria - BSPCB","04-05-2025 21:00:00",26.146529,87.454184,OZONE,6,10,10
+India,Bihar,Arrah,"New DM Office, Arrah - BSPCB","04-05-2025 21:00:00",25.5626095,84.663264,CO,12,31,21
+India,Bihar,Begusarai,"Lohiyanagar, Begusarai - BSPCB","04-05-2025 21:00:00",25.42742023,86.13886079,SO2,19,51,32
+India,Bihar,Begusarai,"Lohiyanagar, Begusarai - BSPCB","04-05-2025 21:00:00",25.42742023,86.13886079,OZONE,6,12,9
+India,Andhra_Pradesh,Amaravati,"Secretariat, Amaravati - APPCB","04-05-2025 21:00:00",16.5150833,80.5181667,SO2,11,14,13
+India,Andhra_Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB","04-05-2025 21:00:00",14.675886,77.593027,PM2.5,58,73,64
+India,Andhra_Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB","04-05-2025 21:00:00",14.675886,77.593027,PM10,60,74,65
+India,Andhra_Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB","04-05-2025 21:00:00",14.675886,77.593027,NO2,23,42,28
+India,Andhra_Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB","04-05-2025 21:00:00",14.675886,77.593027,NH3,5,10,7
+India,Andhra_Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB","04-05-2025 21:00:00",13.204880,79.097889,NH3,6,8,6
+India,Andhra_Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB","04-05-2025 21:00:00",13.204880,79.097889,OZONE,20,33,26
+India,Andhra_Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB","04-05-2025 21:00:00",16.9872867,81.7363176,NH3,1,2,2
+India,Andhra_Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB","04-05-2025 21:00:00",16.9872867,81.7363176,CO,23,116,59
+India,Andhra_Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB (Formerly known as Tirumala, Tirupati - APPCB)","04-05-2025 21:00:00",13.67,79.35,PM2.5,39,117,64
+India,Andhra_Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB (Formerly known as Tirumala, Tirupati - APPCB)","04-05-2025 21:00:00",13.67,79.35,NO2,11,28,19
+India,Andhra_Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB (Formerly known as Tirumala, Tirupati - APPCB)","04-05-2025 21:00:00",13.67,79.35,NH3,1,2,1
+India,Andhra_Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB (Formerly known as Tirumala, Tirupati - APPCB)","04-05-2025 21:00:00",13.67,79.35,CO,24,43,33
+India,Andhra_Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB","04-05-2025 21:00:00",13.615387,79.409230,NO2,9,25,15
+India,Andhra_Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB","04-05-2025 21:00:00",13.615387,79.409230,SO2,5,12,11
+India,Andhra_Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB","04-05-2025 21:00:00",13.615387,79.409230,CO,12,33,28
+India,Andhra_Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB","04-05-2025 21:00:00",16.536107,80.594233,PM10,67,95,74
+India,Andhra_Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB","04-05-2025 21:00:00",16.536107,80.594233,SO2,2,9,7
+India,Andhra_Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB","04-05-2025 21:00:00",16.536107,80.594233,CO,34,34,34
+India,Andhra_Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB","04-05-2025 21:00:00",16.554731,80.649110,PM10,49,69,56
+India,Andhra_Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB","04-05-2025 21:00:00",17.72,83.3,CO,20,102,43
+India,Arunachal_Pradesh,Naharlagun,"Naharlagun, Naharlagun - APSPCB","04-05-2025 21:00:00",27.103358,93.679645,OZONE,NA,NA,NA
+India,Assam,Guwahati,"LGBI Airport, Guwahati - PCBA","04-05-2025 21:00:00",26.10887,91.589544,SO2,11,14,12
+India,Assam,Guwahati,"Railway Colony, Guwahati - PCBA","04-05-2025 21:00:00",26.181742,91.78063,PM10,49,227,109
+India,Assam,Guwahati,"Railway Colony, Guwahati - PCBA","04-05-2025 21:00:00",26.181742,91.78063,SO2,21,23,22
+India,Assam,Nagaon,"Christianpatty, Nagaon - PCBA","04-05-2025 21:00:00",26.349082,92.68449,PM2.5,23,140,70
+India,Assam,Nalbari,"Bata Chowk, Nalbari - PCBA","04-05-2025 21:00:00",26.446912,91.439057,PM10,46,149,71
+India,Assam,Nalbari,"Bata Chowk, Nalbari - PCBA","04-05-2025 21:00:00",26.446912,91.439057,CO,10,41,28
+India,Assam,Sivasagar,"Girls College, Sivasagar - PCBA","04-05-2025 21:00:00",26.987634,94.636574,SO2,7,10,9
+India,Assam,Sivasagar,"Girls College, Sivasagar - PCBA","04-05-2025 21:00:00",26.987634,94.636574,CO,6,24,11
+India,Bihar,Araria,"Kharahiya Basti, Araria - BSPCB","04-05-2025 21:00:00",26.146529,87.454184,NO2,7,7,7
+India,Bihar,Aurangabad,"Gurdeo Nagar, Aurangabad - BSPCB","04-05-2025 21:00:00",24.75746,84.366208,PM2.5,NA,NA,NA
+India,Bihar,Aurangabad,"Gurdeo Nagar, Aurangabad - BSPCB","04-05-2025 21:00:00",24.75746,84.366208,NO2,NA,NA,NA
+India,Bihar,Aurangabad,"Gurdeo Nagar, Aurangabad - BSPCB","04-05-2025 21:00:00",24.75746,84.366208,NH3,NA,NA,NA
+India,Bihar,Aurangabad,"Gurdeo Nagar, Aurangabad - BSPCB","04-05-2025 21:00:00",24.75746,84.366208,CO,20,36,30
+India,Bihar,Begusarai,"Lohiyanagar, Begusarai - BSPCB","04-05-2025 21:00:00",25.42742023,86.13886079,PM2.5,18,267,68
+India,Bihar,Begusarai,"Lohiyanagar, Begusarai - BSPCB","04-05-2025 21:00:00",25.42742023,86.13886079,NO2,71,126,95
