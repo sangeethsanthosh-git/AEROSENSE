@@ -28,7 +28,7 @@ It integrates with the [OpenWeatherMap API](https://openweathermap.org/api) to d
 
 ## 🛠️ Tech Stack  
 - **Backend:** Python, Flask  
-- **Frontend:** Jinja2 Templates (HTML, CSS, JS)  
+- **Frontend:** Jinja2 Templates (Django)  
 - **API Services:** OpenWeatherMap (Weather, Forecast, Air Pollution, Geocoding)  
 - **Others:** Requests, Sessions  
 
