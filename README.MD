@@ -73,7 +73,7 @@ python app.py
 
 Here’s how the app looks:
 
-![App Screenshot](assets/ui.png)
+![App Screenshot](static\images\ui.png)
 
 ⚠️ Notes
 
