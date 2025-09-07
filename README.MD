@@ -27,7 +27,7 @@ It integrates with the [OpenWeatherMap API](https://openweathermap.org/api) to d
 ---
 
 ## 🛠️ Tech Stack  
-- **Backend:** Python, Flask  
+- **Backend:** Python(3.9), Flask  
 - **Frontend:** Jinja2 Templates (Django)  
 - **API Services:** OpenWeatherMap (Weather, Forecast, Air Pollution, Geocoding)  
 - **Others:** Requests, Sessions  
@@ -41,6 +41,8 @@ It integrates with the [OpenWeatherMap API](https://openweathermap.org/api) to d
    git clone https://github.com/sangeethsanthosh-git/AEROSENSE.git
    cd AEROSENSE
 2. **Create and activate a virtual environment**
+
+Here i use python 3.9
 
 python -m venv venv
 source venv/bin/activate   # Mac/Linux
