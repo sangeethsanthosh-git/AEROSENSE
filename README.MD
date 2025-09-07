@@ -67,10 +67,13 @@ python app.py
 
 
 
-📸 Screenshots
 
-### 🖼️ UI Image
-![UI](assets/ui.png)
+
+## 📸 Screenshots
+
+Here’s how the app looks:
+
+![App Screenshot](assets/ui.png)
 
 ⚠️ Notes
 
