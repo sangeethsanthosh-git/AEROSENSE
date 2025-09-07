@@ -40,3 +40,48 @@ It integrates with the [OpenWeatherMap API](https://openweathermap.org/api) to d
    ```bash
    git clone https://github.com/sangeethsanthosh-git/AEROSENSE.git
    cd AEROSENSE
+2. **Create and activate a virtual environment**
+
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+
+
+3. ***Install dependencies**
+
+pip install -r requirements.txt
+
+
+4. **Get your OpenWeatherMap API Key**
+
+Sign up at OpenWeatherMap
+
+Replace the placeholder inside app.py:
+
+app.secret_key = "REPLACE WITH YOUR OPENWEATHER API"
+
+
+5. **Run the app**
+
+python app.py
+
+
+
+📸 Screenshots
+
+### 🖼️ UI Image
+![UI](assets/ui.png)
+
+⚠️ Notes
+
+Cached data expires after 3 minutes to reduce API calls.
+
+If a city is not found, fallback logic suggests nearby valid cities.
+
+Requires a valid OpenWeatherMap API Key with access to Weather, Forecast, Air Pollution & Geocoding APIs.
+
+📌 Roadmap / Future Enhancements
+
+📝 License
+
+This project is licensed under the MIT License – free to use and modify for educational or personal purposes.
