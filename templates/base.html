@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Home{% endblock %} - AREOSENSE</title>
+    <!-- Import Montserrat from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            transition: background-image 0.5s ease-in-out;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 10px;
+            background: rgba(42, 42, 42, 0.8);
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            transition: width 0.3s ease, padding 0.3s ease;
+            overflow: hidden;
+        }
+        .sidebar:hover {
+            width: 60px;
+            padding: 20px 10px;
+        }
+        .sidebar .logo {
+            width: 90px;
+            height: auto;
+            margin-bottom: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .sidebar:hover .logo {
+            opacity: 1;
+        }
+        .sidebar .app-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+        .sidebar:hover .app-name {
+            opacity: 1;
+        }
+        .sidebar a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .sidebar:hover a {
+            opacity: 1;
+        }
+        .sidebar a img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s ease;
+        }
+        .sidebar a:hover img {
+            transform: scale(1.2);
+            background: rgba(68, 68, 68, 0.8);
+            border-radius: 5px;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(3px);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 20px;
+            font-weight: normal;
+        }
+        .header form {
+            display: flex;
+            align-items: center;
+        }
+        .header input[type="text"] {
+            padding: 5px;
+            font-size: 14px;
+            border: none;
+            border-radius: 3px 0 0 3px;
+            background: #333;
+            color: white;
+        }
+        .header button {
+            padding: 5px 10px;
+            font-size: 14px;
+            border: none;
+            background: #555;
+            color: white;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+        }
+        .flash-messages {
+            margin: 10px 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        .flash-message {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        .flash-message.error {
+            background: rgba(255, 99, 71, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="/static/images/logo.png" alt="AREOSENSE Logo" class="logo">
+            <span class="app-name">AREOSENSE</span>
+            <a href="/"><img src="/static/images/home.png" alt="Home"></a>
+            <a href="/index"><img src="/static/images/air.png" alt="AQI Prediction"></a>
+        </div>
+        <div class="main-content">
+            <!-- Flash messages -->
+            <div class="flash-messages">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="flash-message {{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="header">
+                <h1 id="location-header">
+                    {% if weather %}
+                        {{ weather.city }}
+                    {% else %}
+                        Location Unavailable
+                    {% endif %}
+                </h1>
+                <form method="POST" action="{{ request.path }}">
+                    <input type="text" name="city" id="city-input" placeholder="Search your city..." 
+                           value="{% if weather %}{{ weather.city }}{% endif %}" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateBackground(weather) {
+            const desc = weather ? weather.description.toLowerCase() : 'default';
+            const isDay = weather ? weather.is_day : true;
+            let bgImage;
+
+            console.log(`Is Day: ${isDay}, Weather Description: ${desc}`);
+
+            if (desc.includes('clear') || desc.includes('clear sky')) {
+                bgImage = `/static/images/sunny_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('cloud') || desc.includes('overcast')) {
+                bgImage = `/static/images/cloudy_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('rain') || desc.includes('light rain') || desc.includes('shower')) {
+                bgImage = `/static/images/rainy_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('snow')) {
+                bgImage = `/static/images/snowy_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('thunderstorm')) {
+                bgImage = `/static/images/thunderstorm_${isDay ? 'day' : 'night'}.gif`;
+            } else if (desc.includes('mist') || desc.includes('haze') || desc.includes('fog')) {
+                bgImage = `/static/images/mist_${isDay ? 'day' : 'night'}.gif`;
+            } else {
+                bgImage = `/static/images/default_${isDay ? 'day' : 'night'}.gif`;
+                console.log(`Unmatched weather description: ${desc}`);
+            }
+
+            fetch(bgImage, { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        console.error(`Image not found: ${bgImage}, falling back to default`);
+                        bgImage = `/static/images/default_${isDay ? 'day' : 'night'}.gif`;
+                    }
+                    document.body.style.backgroundImage = `url('${bgImage}')`;
+                    console.log(`Updated background: ${bgImage}`);
+                })
+                .catch(error => {
+                    console.error(`Error checking image ${bgImage}: ${error}`);
+                    document.body.style.backgroundImage = `url('/static/images/default_${isDay ? 'day' : 'night'}.gif')`;
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            {% if weather %}
+                const weatherData = {
+                    description: "{{ weather.description }}",
+                    is_day: {{ weather.is_day | tojson }}
+                };
+                updateBackground(weatherData);
+            {% else %}
+                updateBackground(null);
+            {% endif %}
+
+            {% if not geolocation_attempted and request.path == '/' %}
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        position => {
+                            const form = document.createElement('form');
+                            form.method = 'POST';
+                            form.action = '/';
+                            form.innerHTML = `
+                                <input type="hidden" name="lat" value="${position.coords.latitude}">
+                                <input type="hidden" name="lon" value="${position.coords.longitude}">
+                            `;
+                            document.body.appendChild(form);
+                            form.submit();
+                        },
+                        error => {
+                            const form = document.createElement('form');
+                            form.method = 'POST';
+                            form.action = '/';
+                            form.innerHTML = '<input type="hidden" name="geolocation_failed" value="true">';
+                            document.body.appendChild(form);
+                            form.submit();
+                        }
+                    );
+                } else {
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = '/';
+                    form.innerHTML = '<input type="hidden" name="geolocation_failed" value="true">';
+                    document.body.appendChild(form);
+                    form.submit();
+                }
+            {% endif %}
+        });
+    </script>
+</body>
+</html>

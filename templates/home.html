@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <style>
+        .weather-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .weather-summary {
+            margin-bottom: 20px;
+        }
+
+        .forecast-container, .pollution-container {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .forecast-header, .pollution-header {
+            margin-bottom: 10px;
+        }
+
+        .forecast-items, .pollution-items {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 15px;
+            overflow-x: auto;
+        }
+
+        .forecast-day, .pollution-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .toggle-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .toggle-button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .search-form {
+            margin: 20px 0;
+        }
+
+        .search-form input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .search-form button, .geolocation-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-form button:hover, .geolocation-button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #ff4444;
+            margin: 10px 0;
+        }
+
+        .location-label {
+            font-size: 16px;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <div class="weather-container">
+        <!-- Display flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="error-message {{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Location search form -->
+        <form class="search-form" method="POST" action="/">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit">Search</button>
+        </form>
+        <button class="geolocation-button" onclick="getLocation()">Use Current Location</button>
+
+        <!-- Location label -->
+        {% if weather %}
+            <p class="location-label">
+                {% if location_source == "geolocation" %}
+                    Current Location: {{ weather.city }}
+                {% elif location_source == "search" %}
+                    Searched City: {{ weather.city }}
+                {% else %}
+                    Location: {{ weather.city }}
+                {% endif %}
+            </p>
+        {% endif %}
+
+        <!-- Weather summary -->
+        {% if weather %}
+            <div class="weather-summary">
+                <h1>{{ weather.city }}</h1>
+                <h2>{{ weather.temp }}°C</h2>
+                <div>
+                    <p>{{ weather.description | capitalize }}</p>
+                    <div class="weather-details">
+                        <p>Humidity: {{ weather.humidity }}%</p>
+                        <p>Wind: {{ weather.wind_speed }} m/s</p>
+                        <p>Pressure: {{ weather.pressure }} hPa</p>
+                        <p>Visibility: {{ weather.visibility }} km</p>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p>Unable to determine your location. Please search for a city or enable geolocation.</p>
+        {% endif %}
+
+        <!-- Air pollution data -->
+        {% if pollution %}
+            <div class="pollution-container" id="pollution-data">
+                <div class="pollution-header">
+                    <h3>Air Quality</h3>
+                </div>
+                <div class="pollution-items">
+                    <div class="pollution-item">
+                        <p>AQI: {{ pollution.aqi }}</p>
+                        <p>Category: {{ pollution.aqi_bucket }}</p>
+                    </div>
+                    <div class="pollution-item">
+                        <p>PM2.5: {{ pollution.pm2_5 }} µg/m³</p>
+                        <p>PM10: {{ pollution.pm10 }} µg/m³</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <!-- 5-day forecast -->
+        {% if forecast %}
+            <div class="forecast-container" id="forecast-data">
+                <div class="forecast-header">
+                    <h3>5-Day Weather Forecast</h3>
+                </div>
+                <div class="forecast-items">
+                    {% for day in forecast %}
+                        <div class="forecast-day">
+                            <p>{{ day.date }}</p>
+                            <p>{{ day.temp }}°C - {{ day.description | capitalize }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = '/';
+                        form.innerHTML = `
+                            <input type="hidden" name="lat" value="${position.coords.latitude}">
+                            <input type="hidden" name="lon" value="${position.coords.longitude}">
+                        `;
+                        document.body.appendChild(form);
+                        form.submit();
+                    },
+                    error => {
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = '/';
+                        form.innerHTML = '<input type="hidden" name="geolocation_failed" value="true">';
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        // Trigger geolocation on initial load if not attempted
+        {% if not geolocation_attempted %}
+            window.onload = function() {
+                getLocation();
+            };
+        {% endif %}
+    </script>
+{% endblock %}

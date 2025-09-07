@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}AQI Prediction Result{% endblock %}
+{% block content %}
+    <style>
+        /* Avoid conflict with base.html's container class */
+        .result-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .weather-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+
+        .weather-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .text-center {
+            margin: 20px 0;
+        }
+
+        .text-center h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .text-center p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ddd;
+        }
+
+        .no-data, .error-message {
+            font-size: 18px;
+            color: #ccc;
+            margin: 20px 0;
+        }
+
+        .forecast-section {
+            margin-top: 30px;
+        }
+
+        .forecast-card {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+
+        .forecast-card h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+
+        .location-label {
+            font-size: 16px;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <div class="result-container">
+        <h1 class="text-center my-4">AQI Prediction Result</h1>
+
+        <!-- Display flash messages for errors -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="error-message {{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Indicate whether this is the current location or a searched city -->
+        {% if weather %}
+            <p class="location-label">
+                {% if location_source == "geolocation" %}
+                    Current Location: {{ weather.city }}
+                {% elif location_source == "search" %}
+                    Searched City: {{ weather.city }}
+                {% else %}
+                    Location: {{ weather.city }}
+                {% endif %}
+            </p>
+        {% else %}
+            <p class="no-data">Unable to fetch location data. Please search for a city or ensure location services are enabled.</p>
+        {% endif %}
+
+        <!-- Display weather information -->
+        {% if weather %}
+        <div class="weather-info">
+            <h3>Weather in {{ weather.city }}</h3>
+            <p>Temperature: {{ weather.temp }}°C</p>
+            <p>Description: {{ weather.description | capitalize }}</p>
+            <p>Humidity: {{ weather.humidity }}%</p>
+            <p>Wind Speed: {{ weather.wind_speed }} m/s</p>
+            <p>Pressure: {{ weather.pressure }} hPa</p>
+            <p>Visibility: {{ weather.visibility }} km</p>
+        </div>
+        {% else %}
+        <p class="no-data">Weather data unavailable. Please try again later.</p>
+        {% endif %}
+
+        <!-- Display AQI prediction -->
+        {% if prediction is not none %}
+        <div class="text-center">
+            <h2>Predicted AQI: {{ prediction | round(2) }}</h2>
+            <p>AQI Category: {{ aqi_bucket }}</p>
+        </div>
+        {% else %}
+        <p class="no-data">AQI prediction unavailable due to missing or invalid data.</p>
+        {% endif %}
+
+        <!-- Display short-term forecast -->
+        {% if weather and weather.forecast %}
+        <div class="forecast-section">
+            <h3>Short-Term Forecast (Next 15 Hours)</h3>
+            {% for forecast in weather.forecast %}
+            <div class="forecast-card">
+                <h4>{{ forecast.date }}</h4>
+                <p>Temperature: {{ forecast.temp }}°C</p>
+                <p>Description: {{ forecast.description | capitalize }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- City search form -->
+    <div class="text-center">
+        <form method="POST" action="/index">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit">Predict AQI</button>
+        </form>
+    </div>
+{% endblock %}
