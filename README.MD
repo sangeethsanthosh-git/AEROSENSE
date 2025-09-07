@@ -69,11 +69,12 @@ python app.py
 
 
 
-## 📸 Screenshots
+## 📸 Screenshots  
 
-Here’s how the app looks:
+### 🌍 User Interface  
+![UI Screenshot](static/images/ui.png)
 
-![App Screenshot](static\images\ui.png)
+
 
 ⚠️ Notes
 
