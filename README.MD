@@ -78,7 +78,7 @@ python app.py
 
 
 
-⚠️ Notes
+## ⚠️ Notes
 
 Cached data expires after 3 minutes to reduce API calls.
 
@@ -88,6 +88,6 @@ Requires a valid OpenWeatherMap API Key with access to Weather, Forecast, Air Po
 
 📌 Roadmap / Future Enhancements
 
-📝 License
+## 📝 License
 
 This project is licensed under the MIT License – free to use and modify for educational or personal purposes.
